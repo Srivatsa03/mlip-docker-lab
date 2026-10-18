@@ -251,3 +251,6 @@ Check health one more time. Be ready to tell the TA what you see, why it differs
 - If the model file is missing, confirm the volume is mounted with `docker volume ls` and remember the Compose name prefix
 - If logs appear in the container but not on your host, your project directory is probably outside the paths Docker shares with your machine
 - If `joblib.load` complains about versions, your two requirements files disagree on scikit-learn
+- On an Apple Silicon Mac, if a build dies with `content digest ... not found` or a container refuses to
+  start with `does not provide the specified platform`, check whether `DOCKER_DEFAULT_PLATFORM` is set in
+  your shell. Unset it and rebuild, or pull the base image for that platform first
